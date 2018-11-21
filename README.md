@@ -9,6 +9,7 @@
 
 SELECT log.path, count(*) AS num
 FROM log
+WHERE status = '200 OK'
 GROUP BY path
 ORDER BY num DESC;
 
@@ -23,7 +24,7 @@ ORDER BY num DESC;
 
 ### viewsperday
 
-SELECT date_trunc('day', log.time) "day", count(*) AS failedrequests
+SELECT date_trunc('day', log.time) "day", count(*) AS views
 FROM log
 GROUP BY 1
 ORDER BY 1;
