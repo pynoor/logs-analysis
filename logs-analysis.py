@@ -34,10 +34,14 @@ top_authors = c.fetchall()
 for author in top_authors:
     print(author[0] + ' -- ' + str(author[1]) + ' views')
 
-print("\nAnd finally, here is a list of days on which our website didn't work so well: \n")
+print("""\nAnd finally, here is a list of days on which our website
+        didn't work so well: \n""")
+
 c.execute(days_of_major_bad_requests_query)
 bad_requests_days = c.fetchall()
 for day in bad_requests_days:
-    print('{:%B %d, %Y}'.format(day[0]) + ' -- ' + str(round(day[1]/day[2]*100,1)) + '% errors')
+    if round(day[1]/day[2]*100, 1) > 1:
+        print('{:%B %d, %Y}'.format(day[0]) + ' -- ' +
+              str(round(day[1]/day[2]*100, 1)) + '% errors')
 
 db.close()
