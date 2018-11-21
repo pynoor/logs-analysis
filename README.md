@@ -21,10 +21,10 @@ To run this program you'll need to define a bunch of views:
 This view results in a table that counts the amount of views per
 path (that did not result in an error).
 
-SELECT log.path, count(*) AS num
-FROM log
-WHERE status = '200 OK'
-GROUP BY path
+SELECT log.path, count(*) AS num <br>
+FROM log <br>
+WHERE status = '200 OK' <br>
+GROUP BY path <br>
 ORDER BY num DESC;
 
 
@@ -32,27 +32,27 @@ ORDER BY num DESC;
 
 In this view we are obtaining the total amount of views per author, referenced by their id.
 
-SELECT articles.author, sum(views.num) AS num
-FROM articles, views
-WHERE views.path LIKE '%' || articles.slug
-GROUP BY author
+SELECT articles.author, sum(views.num) AS num <br>
+FROM articles, views <br>
+WHERE views.path LIKE '%' || articles.slug <br>
+GROUP BY author <br>
 ORDER BY num DESC;
 
 ### View 3: viewsperday
 
 This view gives us the amount of views (log entries) per day
 
-SELECT date_trunc('day', log.time) "day", count(*) AS views
-FROM log
-GROUP BY 1
+SELECT date_trunc('day', log.time) "day", count(*) AS views <br>
+FROM log <br>
+GROUP BY 1 <br>
 ORDER BY 1;
 
 ### View 4: failedviewsperday
 
 Finally, in this view, we get the amount of failed requests per day
 
-SELECT date_trunc('day', log.time) "day", count(*) AS failedrequests
-FROM log
-WHERE log.status != '200 OK'
-GROUP BY 1
+SELECT date_trunc('day', log.time) "day", count(*) AS failedrequests <br>
+FROM log <br>
+WHERE log.status != '200 OK' <br>
+GROUP BY 1 <br>
 ORDER BY 1;
