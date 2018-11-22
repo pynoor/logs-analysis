@@ -15,11 +15,20 @@ The tool is supposed to answer three questions:
 
 ## The Set-Up / Requirements:
 
-Here's a list of requirements you'll need to run this program:
+Here's a list of <b>requirements</b> you'll need to run this program:
 
 - Python 3 (https://www.python.org/downloads/)
 - Psycopg2 (http://initd.org/psycopg/download/)
 - PostgreSQL (https://www.postgresql.org/download/)
+
+Now, let's set up our database:
+
+First you want to start the psql program by cd-ing to your working directory (the one that contains all the code) and typing 'psql' into your command line.
+
+From there you want to run the following query:
+'CREATE DATABASE [newsdata];'
+
+Mind you, the database file is in the same zip file this README came in.
 
 
 Furthermore, to run this program you'll need to define a bunch of views:
