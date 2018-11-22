@@ -40,9 +40,10 @@ bad_requests_days = c.fetchall()
 worst_day = bad_requests_days[0][0]
 for day in bad_requests_days:
     if round(day[1]/day[2]*100, 1) > 1:
-        print ("\n\nOn " + '{:%B %d, %Y}'.format(worst_day) +
-                " things really didn't look well... " + str(round(day[1]/day[2]*100, 1))
-                + "% of requests produced an error.")
+        print("\n\nOn " + '{:%B %d, %Y}'.format(worst_day) +
+              " things really didn't look well... " +
+              str(round(day[1]/day[2]*100, 1)) +
+              "% of requests produced an error.")
         break
 
 
