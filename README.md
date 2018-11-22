@@ -74,6 +74,12 @@ WHERE log.status != '200 OK' <br>
 GROUP BY 1 <br>
 ORDER BY 1;
 
+## Running the code:
+
+You're all set! All you need to do now is make sure you are in the right directory (the one containing this file) and run the following command from your command line:
+
+'python3 -i logs-analysis.py'
+
 ## Concerning Git:
 
 I've had a lot of trouble trying to push this repo to my remote repo. The main problem was that I made a few commits before pushing (or rather attempting to) for the first time and the first commit still included the database file which is too big to upload to Git.
