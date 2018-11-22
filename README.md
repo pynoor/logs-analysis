@@ -26,10 +26,13 @@ Now, let's set up our database:
 First you want to start the psql program by cd-ing to your working directory (the one that contains all the code) and typing 'psql' into your command line.
 
 From there you want to run the following query:
-'CREATE DATABASE [newsdata];'
+'CREATE DATABASE newsdata;'
 
-Mind you, the database file is in the same zip file this README came in.
+Mind you, the database file is in the same zip file this README came in. So exit the psql program with '\q' and cd into the directory where this file is now.
+Then run:<br> psql newsdata < "path/to/newsdata.sql"
 
+This will hook up your database with the content in the sql script
+aka populate your database.
 
 Furthermore, to run this program you'll need to define a bunch of views:
 
