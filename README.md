@@ -56,3 +56,12 @@ FROM log <br>
 WHERE log.status != '200 OK' <br>
 GROUP BY 1 <br>
 ORDER BY 1;
+
+## Concerning Git:
+
+I've had a lot of trouble trying to push this repo to my remote repo. The main problem was that I made a few commits before pushing (or rather attempting to) for the first time and the first commit still included the database file which is too big to upload to Git.
+As such, everytime I try to push, I get an error message that I'm pushing a file that's too big.
+I've tried fixing this by removing the large file (which only appears in the initial commit) but that nearly made me lose my entire code.
+I've decided to submit the project this way, and will know better for the future.
+
+In the zip file you should see some images of my git log, just to show you that I've been using git along this project.
