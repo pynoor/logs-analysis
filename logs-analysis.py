@@ -35,8 +35,19 @@ top_authors = c.fetchall()
 for author in top_authors:
     print(author[0] + ' -- ' + str(author[1]) + ' views')
 
-print("""\nAnd finally, here is a list of days on which our website
-        didn't work so well: \n""")
+c.execute(days_of_major_bad_requests_query)
+bad_requests_days = c.fetchall()
+worst_day = bad_requests_days[0][0]
+for day in bad_requests_days:
+    if round(day[1]/day[2]*100, 1) > 1:
+        print ("\n\nOn " + '{:%B %d, %Y}'.format(worst_day) +
+                " things really didn't look well... " + str(round(day[1]/day[2]*100, 1))
+                + "% of requests produced an error.")
+        break
+
+
+print("""\nIn fact, here is a whole list of days on which over 1%
+of requests failed: \n""")
 
 c.execute(days_of_major_bad_requests_query)
 bad_requests_days = c.fetchall()
