@@ -12,9 +12,17 @@ The tool is supposed to answer three questions:
 
 3. On what days did more than 1% of requests lead to errors?
 
-## The Set-Up:
 
-To run this program you'll need to define a bunch of views:
+## The Set-Up / Requirements:
+
+Here's a list of requirements you'll need to run this program:
+
+- Python 3 (https://www.python.org/downloads/)
+- Psycopg2 (http://initd.org/psycopg/download/)
+- PostgreSQL (https://www.postgresql.org/download/)
+
+
+Furthermore, to run this program you'll need to define a bunch of views:
 
 ### View 1: views
 
