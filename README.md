@@ -91,3 +91,34 @@ I've tried fixing this by removing the large file (which only appears in the ini
 I've decided to submit the project this way, and will know better for the future.
 
 In the zip file you should see some images of my git log, just to show you that I've been using git along this project.
+
+EDIT:
+I've finally managed to remove the large database file from the commits and push my repo!
+Here is what I did:
+
+1) Run:
+
+    $ git rebase -i --root
+
+2) change the ‘pick’ to ‘drop’ on all the commits containing the        super large file except the initial commit, on the latter           change ‘pick’ to ‘edit’
+
+3) save and close text editor
+
+4) on your command line you’ll see the message :
+
+Stopped at 84eab97... initial commit
+You can amend the commit now, with
+
+	$ git commit --amend
+
+Once you are satisfied with your changes, run
+
+	$ git rebase —continue
+
+Now run the following three commands:
+
+    $ git rm --cached newsdata.sql<br>
+    $ git commit --amend -C HEAD<br>
+    $ git rebase —continue
+
+done!!
